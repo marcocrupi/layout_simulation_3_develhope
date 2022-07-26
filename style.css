@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+    "asideArea navArea"
+    "asideArea sectionArea";
+}
+
+aside {
+    grid-area: asideArea;
+    display: flex;
+    justify-content: center;
+    background-color: gray;
+}
+
+aside div {
+    margin: 30px;
+    height: 3rem;
+    width: 80%;
+    background-color: rgb(221, 221, 221);
+}
+
+nav {
+    grid-area: navArea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(221, 221, 221);
+    height: 80px;
+}
+
+.leftLogoMobile {
+    display: none;
+}
+
+nav div {
+    margin: 30px;
+}
+
+nav div input {
+    height: 3rem;
+    background-color: rgb(199, 199, 199);
+}
+
+nav div input[value] {
+    padding-left: 15px;
+}
+
+nav div:nth-child(3) {
+    height: 3rem;
+    width: 3rem;
+    background-color: rgb(169, 169, 169);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+section {
+    grid-area: sectionArea;
+}
+
+section div {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50px;
+    background-color: gray;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 30px;
+}
+
+@media screen and (max-width: 600px) {
+
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas: 
+        "navArea"
+        "sectionArea";
+    }
+
+    nav div input {
+        display: none;
+    }
+
+    aside {
+        display: none;
+    }
+
+    .leftLogoMobile {
+        display: block;
+        background-color: rgb(190, 190, 190);
+        height: 3rem;
+        width: 8rem;
+    }
+}
